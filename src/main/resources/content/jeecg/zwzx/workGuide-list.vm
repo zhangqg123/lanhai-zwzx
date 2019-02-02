@@ -1,0 +1,324 @@
+#parse("content/base/back/common/macro.vm")
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<form role="form" class="form-inline" action="$!{basePath}/jeecg/workGuide.do?list" method="post"  id="formSubmit">
+				<div  class="col-md-10" style="width:100%">
+					<div class="panel panel-default">
+						<div class="panel-heading">列表</div>
+						<div class="panel-body">
+							<div class="search">
+									<!--
+										 <div class="form-group col-sm-3">
+											<label for="itemType" class="control-label col-sm-3 line34">事项类型</label>
+											<div class="col-sm-8">
+												<input type="text" name="itemType" id="itemType" value="$!{workGuide.itemType}" class="form-control">
+											</div>
+										 </div>
+							
+										 <div class="form-group col-sm-3">
+											<label for="nature" class="control-label col-sm-3 line34">实施主体性质</label>
+											<div class="col-sm-8">
+												<input type="text" name="nature" id="nature" value="$!{workGuide.nature}" class="form-control">
+											</div>
+										 </div>
+									-->
+										 <div class="form-group col-sm-3">
+											<label for="management" class="control-label col-sm-3 line34">实施机构</label>
+											<div class="col-sm-8">
+									<!--		<input type="text" name="management" id="management" value="$!{workGuide.management}" class="form-control">	-->
+											<select name="management" id="management" class="form-control">
+											<option value="" >实施机构</option>
+											 #foreach($menu in $menuList)
+												<option value="${menu.id}" #if($!{workGuide.management} == ${menu.id})selected#end>--$!{menu.name}</option>
+											 #end
+											</select>
+											</div>
+										 </div>
+									<!--
+										 <div class="form-group col-sm-3">
+											<label for="workCode" class="control-label col-sm-3 line34">目录编码/实施编码</label>
+											<div class="col-sm-8">
+												<input type="text" name="workCode" id="workCode" value="$!{workGuide.workCode}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="address" class="control-label col-sm-3 line34">办事地点</label>
+											<div class="col-sm-8">
+												<input type="text" name="address" id="address" value="$!{workGuide.address}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="phone" class="control-label col-sm-3 line34">咨询电话</label>
+											<div class="col-sm-8">
+												<input type="text" name="phone" id="phone" value="$!{workGuide.phone}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="audit" class="control-label col-sm-3 line34">监督投诉</label>
+											<div class="col-sm-8">
+												<input type="text" name="audit" id="audit" value="$!{workGuide.audit}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="officeType" class="control-label col-sm-3 line34">办件类型</label>
+											<div class="col-sm-8">
+												<input type="text" name="officeType" id="officeType" value="$!{workGuide.officeType}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="workTime" class="control-label col-sm-3 line34">办理时间</label>
+											<div class="col-sm-8">
+												<input type="text" name="workTime" id="workTime" value="$!{workGuide.workTime}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="legalTime" class="control-label col-sm-3 line34">是否发布</label>
+											<div class="col-sm-8">
+												<input type="text" name="legalTime" id="legalTime" value="$!{workGuide.legalTime}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="promiseTime" class="control-label col-sm-3 line34">承诺时间</label>
+											<div class="col-sm-8">
+												<input type="text" name="promiseTime" id="promiseTime" value="$!{workGuide.promiseTime}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="resultName" class="control-label col-sm-3 line34">结果名称</label>
+											<div class="col-sm-8">
+												<input type="text" name="resultName" id="resultName" value="$!{workGuide.resultName}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="workType" class="control-label col-sm-3 line34">办理形式</label>
+											<div class="col-sm-8">
+												<input type="text" name="workType" id="workType" value="$!{workGuide.workType}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="workLevel" class="control-label col-sm-3 line34">行驶层级</label>
+											<div class="col-sm-8">
+												<input type="text" name="workLevel" id="workLevel" value="$!{workGuide.workLevel}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="numLimit" class="control-label col-sm-3 line34">数量限制</label>
+											<div class="col-sm-8">
+												<input type="text" name="numLimit" id="numLimit" value="$!{workGuide.numLimit}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="feeType" class="control-label col-sm-3 line34">收费方式</label>
+											<div class="col-sm-8">
+												<input type="text" name="feeType" id="feeType" value="$!{workGuide.feeType}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="domain" class="control-label col-sm-3 line34">通办范围</label>
+											<div class="col-sm-8">
+												<input type="text" name="domain" id="domain" value="$!{workGuide.domain}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="agency" class="control-label col-sm-3 line34">中介服务</label>
+											<div class="col-sm-8">
+												<input type="text" name="agency" id="agency" value="$!{workGuide.agency}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="admissibility" class="control-label col-sm-3 line34">受理条件</label>
+											<div class="col-sm-8">
+												<input type="text" name="admissibility" id="admissibility" value="$!{workGuide.admissibility}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="foundation" class="control-label col-sm-3 line34">foundation</label>
+											<div class="col-sm-8">
+												<input type="text" name="foundation" id="foundation" value="$!{workGuide.foundation}" class="form-control">
+											</div>
+										 </div>
+										 <div class="form-group col-sm-3">
+											<label for="feeScale" class="control-label col-sm-3 line34">收费标准</label>
+											<div class="col-sm-8">
+												<input type="text" name="feeScale" id="feeScale" value="$!{workGuide.feeScale}" class="form-control">
+											</div>
+										 </div>
+								-->
+								<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 搜  索</button>
+								<button type="button" class="btn btn-primary" onclick="searchReset()"><i class="fa fa-refresh"></i> 重  置</button>
+								<div class="clearfix"></div>
+							</div>
+							<div id="legend">
+								<legend  class="le">
+									<button type="button" class="btn btn-primary" onclick="doUrl('$!{basePath}/jeecg/workGuide.do?toAdd')" ><i class="fa fa-plus"></i> 新增</button> 
+									<button type="button" class="btn btn-primary" onclick="batchDelete()" ><i class="fa fa-trash-o"></i> 批量删除</button>
+								</legend>
+							</div>
+							<table class="table table-striped">
+								<thead>
+									<th>
+											<input type="checkbox" name="ckAll" id="ckAll" />
+					        		</th>
+											<th>指南名称</th>
+											<th>事项类型</th>
+									<!--		<th>实施主体性质</th>	-->
+											<th>实施机构</th>
+									<!--		<th>目录编码/实施编码</th>
+											<th>办事地点</th>	-->
+											<th>咨询电话</th>
+									<!--		<th>监督投诉</th>
+											<th>办件类型</th>
+											<th>办理时间</th>	-->
+											<th>法定时限</th>
+											<th>承诺时限</th>
+									<!--		<th>结果名称</th>
+											<th>办理形式</th>
+											<th>行驶层级</th>
+											<th>数量限制</th>
+											<th>收费方式</th>
+											<th>通办范围</th>
+											<th>中介服务</th>
+											<th>受理条件</th>
+											<th>设定依据</th>
+											<th>收费标准</th>	-->
+									<th>操作</th>
+								</thead>
+								<tbody>
+								#if($!{pageInfos})
+									#foreach($!{info} in $!{pageInfos})
+										<tr>	
+											<td>
+													<input type="checkbox" name="ck" id="ck_$!{velocityCount}" value="$!{info.id}"/>
+											</td>	
+														<td>$!{info.guideName}</td>
+														<td>$!{info.itemType}</td>
+											<!--			<td>$!{info.nature}</td>	-->
+														<td>
+														 #foreach($menu in $menuList)
+															#if($!{info.management} == ${menu.id})
+																$!{menu.name}
+															#end
+														 #end
+														</td>
+											<!--			<td>$!{info.workCode}</td>
+														<td>$!{info.address}</td>	-->
+														<td>$!{info.phone}</td>
+											<!--			<td>$!{info.audit}</td>
+														<td>$!{info.officeType}</td>
+														<td>$!{info.workTime}</td>	-->
+														<td>$!{info.legalTime}</td>
+														<td>$!{info.promiseTime}</td>
+											<!--			<td>$!{info.resultName}</td>
+														<td>$!{info.workType}</td>
+														<td>$!{info.workLevel}</td>
+														<td>$!{info.numLimit}</td>
+														<td>$!{info.feeType}</td>
+														<td>$!{info.domain}</td>
+														<td>$!{info.agency}</td>
+														<td>$!{info.admissibility}</td>
+														<td>$!{info.foundation}</td>
+														<td>$!{info.feeScale}</td>	-->
+											<td class="last">
+											<a class="btn btn-success btn-xs"  href="javascript:doUrl('$!{basePath}/jeecg/workGuide.do?toEdit&id=$!{info.id}')" ><i class="fa fa-edit"></i> 编辑</a>
+											<a class="btn btn-info btn-xs"  href="javascript:doUrl('$!{basePath}/jeecg/workFlow.do?list&guideId=$!{info.id}')" ><i class="fa fa-edit"></i> 流程</a>
+											<a class="btn btn-primary btn-xs"  href="javascript:doUrl('$!{basePath}/jeecg/workMaterial.do?list&guideId=$!{info.id}')" ><i class="fa fa-edit"></i> 材料</a>
+											<a class="btn btn-danger btn-xs" href="javascript:delData('$!{basePath}/jeecg/workGuide.do?doDelete&id=$!{info.id}')"><i class="fa fa-trash-o"></i> 删除</a>
+											</td>
+										</tr>
+									 #end
+								 #end
+								</tbody>
+							</table>
+							<div class="text-right">
+								<!--公用翻页代码-->
+								#set($attr='formSubmit')
+								#showPageList($pageInfos $attr)
+								<!--END公用翻页代码-->
+							</div>
+						</div>
+					</div>
+				</div>  
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+$("#ckAll").click(function(){ 
+	if($(this).prop("checked")){ 
+	 $(":checkbox").prop("checked",true) 
+	}else{ 
+	$(":checkbox").prop("checked",false)  
+	} 
+}); 
+
+//jquery获取复选框值    
+function getCkValue(){  
+  var chk_value =[];    
+  $('input[name="ck"]:checked').each(function(){    
+   chk_value.push($(this).val());    
+  });    
+  //alert(chk_value.length==0 ?'你还没有选择任何内容！':chk_value);    
+}
+//获得所有选中行的ID进行批量删除
+function batchDelete() {
+    var ids = [];
+    var check = document.getElementsByName("ck");
+    for(var i=0;i<check.length;i++){
+        if(check[i].checked){
+    		ids.push(check[i].value);
+        }
+    }
+   	if(ids.length > 0) {
+    	parent.layer.confirm('确认进行批量删除吗？', {
+        	btn: ['确定','取消'] //按钮
+    	}, function(){
+       		jQuery.ajax({
+       			url : '$!{basePath}/jeecg/workGuide.do?batchDelete',
+       			data : {
+       				ids : ids,
+       			},
+       			type : 'POST',
+    			dataType: 'json',
+       			traditional:true,
+    			success:function(data) {
+    				if(data.success){
+    					parent.layer.alert(data.msg, {
+    	        	        icon: 1,
+    	        	        shadeClose: false,
+    	        	        title: '提示'
+    	        	    },function(index){
+    						document.getElementById('formSubmit').submit();
+    	        	    	parent.layer.close(index);
+    					});
+    				}else {
+    					layeralert(data.msg,0);
+    				}
+    			},
+    			error: function(data, status, e){  
+    	        	if(data.status == "401"){
+    	        		layeralert("没有权限！",0);
+    					return;
+    				}
+    	        }
+       		});
+		});
+   	}else {
+		layeralert("您还没有选择要删除的行");
+   	}
+}
+//重置按钮    
+function searchReset() {
+	$("#formSubmit").find(":input").val("");
+	$("#formSubmit").submit();
+}
+//重置按钮    
+function generate() {
+	$("#formSubmit").find(":input").val("");
+	$("#formSubmit").submit();
+}
+</script>

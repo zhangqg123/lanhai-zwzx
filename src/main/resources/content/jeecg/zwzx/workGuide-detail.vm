@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">详情</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form">
+						<fieldset disabled>
+																		<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">事项类型</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.itemType}" name="itemType" id="itemType" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">实施主体性质</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.nature}" name="nature" id="nature" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">实施机构</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.management}" name="management" id="management" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">目录编码/实施编码</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.workCode}" name="workCode" id="workCode" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办事地点</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.address}" name="address" id="address" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">咨询电话</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.phone}" name="phone" id="phone" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">监督投诉</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.audit}" name="audit" id="audit" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办件类型</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.officeType}" name="officeType" id="officeType" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办理时间</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.workTime}" name="workTime" id="workTime" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">是否发布</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.legalTime}" name="legalTime" id="legalTime" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">承诺时间</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.promiseTime}" name="promiseTime" id="promiseTime" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">结果名称</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.resultName}" name="resultName" id="resultName" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办理形式</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.workType}" name="workType" id="workType" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">行驶层级</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.workLevel}" name="workLevel" id="workLevel" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">数量限制</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.numLimit}" name="numLimit" id="numLimit" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">收费方式</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.feeType}" name="feeType" id="feeType" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">通办范围</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.domain}" name="domain" id="domain" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">中介服务</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.agency}" name="agency" id="agency" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">受理条件</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.admissibility}" name="admissibility" id="admissibility" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">foundation</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.foundation}" name="foundation" id="foundation" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">收费标准</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workGuide.feeScale}" name="feeScale" id="feeScale" class="form-control" />
+												</div>
+											</div>
+						</fieldset>
+						<div class="form-group mno">
+							<div class="col-sm-offset-1 col-sm-6">
+								<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/jeecg/workGuide.do?list')"><i class="fa fa-arrow-circle-left"></i> 返回</button>
+							 </div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

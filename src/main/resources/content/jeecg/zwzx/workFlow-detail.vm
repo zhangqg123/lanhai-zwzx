@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">详情</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form">
+						<fieldset disabled>
+																		<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">流程名称</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workFlow.flowName}" name="flowName" id="flowName" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">流程内容</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workFlow.flowContent}" name="flowContent" id="flowContent" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">流程图</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workFlow.flowChart}" name="flowChart" id="flowChart" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">指南编号</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workFlow.guideId}" name="guideId" id="guideId" class="form-control" />
+												</div>
+											</div>
+						</fieldset>
+						<div class="form-group mno">
+							<div class="col-sm-offset-1 col-sm-6">
+								<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/jeecg/workFlow.do?list')"><i class="fa fa-arrow-circle-left"></i> 返回</button>
+							 </div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

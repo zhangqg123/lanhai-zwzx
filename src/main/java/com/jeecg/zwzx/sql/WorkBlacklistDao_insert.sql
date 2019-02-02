@@ -1,0 +1,19 @@
+INSERT  INTO
+	work_blacklist
+      ( 
+      ID                            
+      ,PHONE                          
+      ,STATUS                         
+      ,IDCARD                         
+      ,CREATE_BY                      
+      ,CREATE_DATE                    
+      ) 
+values
+      (
+      :workBlacklist.id                            
+      ,:workBlacklist.phone                         
+      ,:workBlacklist.status                        
+      ,:workBlacklist.idcard                        
+      ,:workBlacklist.createBy                      
+      ,:workBlacklist.createDate                    
+      )

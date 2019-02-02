@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+								<button type="button" class="btn btn-primary" id="formSubmit"><span class="fa fa-save"></span> 保存</button>
+				<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/jeecg/workApply.do?list')"><span class="fa fa-arrow-circle-left"></span> 返回</button>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/jeecg/workApply.do?doAdd" method="POST">
+						<input type="hidden" id="btn_sub" class="btn_sub" />
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">实施部门</label>
+										<div class="col-sm-8">
+									<!--		<input type="text" value="$!{workApply.management}" name="management" id="management" class="form-control" />	-->
+											<select id="management" name="management"  class="form-control">
+											 <option value="" >实施机构</option>
+											 #foreach($menu in $menuList)
+												<option value="${menu.id}" >--$!{menu.name}</option>
+											 #end
+											</select>
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">指南名称</label>
+										<div class="col-sm-8">
+									<!--		<input type="text" value="$!{workApply.guideId}" name="guideId" id="guideId" class="form-control" />	-->
+											<select id="guideId" name="guideId"  class="form-control">
+											 <option value="" >指南名称</option>
+											 #foreach($guide in $guideList)
+												<option value="${guide.id}" >--$!{guide.guideName}</option>
+											 #end
+											</select>
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">证件号码</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.idNumber}" name="idNumber" id="idNumber" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">申报主体</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.applySubject}" name="applySubject" id="applySubject" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">法人代表</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.legalRepresent}" name="legalRepresent" id="legalRepresent" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">联系人</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.contact}" name="contact" id="contact" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">联系手机</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.mobile}" name="mobile" id="mobile" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">联系电话</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.phone}" name="phone" id="phone" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办件类型</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.address}" name="address" id="address" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">取件类型</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.receiveType}" name="receiveType" id="receiveType" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办件数量</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.applyNum}" name="applyNum" id="applyNum" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">申报状态</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.applyStatus}" name="applyStatus" id="applyStatus" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">申报日期</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{workApply.applyData})" name="applyData" id="applyData" class="form-control" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd'})"   style="background: url('$!{basePath}/plug-in-ui/images/datetime.png') no-repeat scroll right center transparent;" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">处理日期</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{workApply.dealData})" name="dealData" id="dealData" class="form-control" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd'})"   style="background: url('$!{basePath}/plug-in-ui/images/datetime.png') no-repeat scroll right center transparent;" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办理人员</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.dealPersion}" name="dealPersion" id="dealPersion" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">审核人</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.audit}" name="audit" id="audit" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">答复内容</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.reply}" name="reply" id="reply" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">上传材料</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workApply.material}" name="material" id="material" class="form-control" />
+										</div>
+									</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in-ui/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in-ui/js/forminit.p3.js"></script> 
+<script>
+
+ $(document).ready(function(){
+    $("#management").change(function(){
+        $("#guideId").empty();
+    	var mId=$("#management").find("option:selected").val();
+        //根据一级select的值，异步获取数据更新二级的选项             
+
+		var url="$!{basePath}/jeecg/workApply.do?getGuideByManagement&management=$!{departId}"+mId;
+    	jQuery.ajax({  
+	        async : false,  
+	        cache:false,  
+	        type: 'POST',  
+	        dataType : "json",  
+	        url: url ,//请求的action路径  
+	        error: function () {//请求失败处理函数  
+	            alert('请求失败');  
+	        },  
+	        success:function(data){ //请求成功后处理函数。    
+	            var guides = data.obj.results;
+				var option='<option value="">指南名称</option>';
+				$("#guideId").append(option);
+				for(i=0;i<guides.length;i++){
+ 	               var option = '<option value="'+guides[i].id+'">'+guides[i].guideName+'</option>' ;     
+ 	               $("#guideId").append(option);
+				}
+			}  
+	    });  
+
+    	
+    });
+});
+
+</script>

@@ -1,0 +1,19 @@
+INSERT  INTO
+	work_material
+      ( 
+      id                            
+      ,material_name                  
+      ,material_content               
+      ,material_standard              
+      ,material_requred               
+      ,guide_id                       
+      ) 
+values
+      (
+      :workMaterial.id                            
+      ,:workMaterial.materialName                  
+      ,:workMaterial.materialContent               
+      ,:workMaterial.materialStandard              
+      ,:workMaterial.materialRequred               
+      ,:workMaterial.guideId                       
+      )

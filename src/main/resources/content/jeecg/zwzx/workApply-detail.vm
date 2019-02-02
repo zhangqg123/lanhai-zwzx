@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">详情</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form">
+						<fieldset disabled>
+																		<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">实施部门</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.management}" name="management" id="management" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">指南编号</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.guideId}" name="guideId" id="guideId" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">证件号码</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.idNumber}" name="idNumber" id="idNumber" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">申报主体</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.applySubject}" name="applySubject" id="applySubject" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">法人代表</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.legalRepresent}" name="legalRepresent" id="legalRepresent" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">联系人</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.contact}" name="contact" id="contact" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">联系手机</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.mobile}" name="mobile" id="mobile" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">联系电话</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.phone}" name="phone" id="phone" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办件类型</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.address}" name="address" id="address" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">取件类型</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.receiveType}" name="receiveType" id="receiveType" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办件数量</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.applyNum}" name="applyNum" id="applyNum" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">申报状态</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.applyStatus}" name="applyStatus" id="applyStatus" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">申报日期</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{workApply.applyData})" name="applyData" id="applyData" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">处理日期</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!dateTool.format("yyyy-MM-dd",$!{workApply.dealData})" name="dealData" id="dealData" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">办理人员</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.dealPersion}" name="dealPersion" id="dealPersion" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">审核人</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.audit}" name="audit" id="audit" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group mno">
+												<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">答复内容</label>
+												<div class="col-sm-2">
+													<input type="text" value="$!{workApply.reply}" name="reply" id="reply" class="form-control" />
+												</div>
+											</div>
+						</fieldset>
+						<div class="form-group mno">
+							<div class="col-sm-offset-1 col-sm-6">
+								<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/jeecg/workApply.do?list')"><i class="fa fa-arrow-circle-left"></i> 返回</button>
+							 </div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

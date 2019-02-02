@@ -1,0 +1,23 @@
+INSERT  INTO
+	work_menu
+      ( 
+      ID                            
+      ,IMAGE_HREF                     
+      ,IMAGE_NAME                     
+      ,NAME                           
+      ,TYPE                           
+      ,PARENT_CODE                    
+      ,HREF                           
+      ,OWNER                          
+      ) 
+values
+      (
+      :workMenu.id                            
+      ,:workMenu.imageHref                     
+      ,:workMenu.imageName                     
+      ,:workMenu.name                          
+      ,:workMenu.type                          
+      ,:workMenu.parentCode                    
+      ,:workMenu.href                          
+      ,:workMenu.owner                         
+      )

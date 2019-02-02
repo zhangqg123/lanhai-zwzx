@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+#parse("content/base/back/common/head.vm")
+<body style='overflow:scroll;overflow-x:hidden'>
+	<div class="container bs-docs-container" style="width:100%;">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+								<button type="button" class="btn btn-primary" id="formSubmit"><span class="fa fa-save"></span> 保存</button>
+				<button type="button" class="btn btn-default" id="formReturn" data-dismiss="modal" onclick="doUrl('$!{basePath}/jeecg/workMaterial.do?list&guideId=$!{guideId}')"><span class="fa fa-arrow-circle-left"></span> 返回</button>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal" role="form" id="dailogForm" action="$!{basePath}/jeecg/workMaterial.do?doAdd" method="POST">
+						<input type="hidden" id="btn_sub" class="btn_sub" />
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">材料名称</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workMaterial.materialName}" name="materialName" id="materialName" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">材料内容</label>
+										<div class="col-sm-8">
+										<!--	<input type="text" value="$!{workMaterial.materialContent}" name="materialContent" id="materialContent" class="form-control" />	-->
+											<textarea name="materialContent" id="materialContent" style="height:100px" class="form-control">$!{workMaterial.materialContent}</textarea>
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">受理标准</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workMaterial.materialStandard}" name="materialStandard" id="materialStandard" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group mno">
+										<label for="inputEmail3" class="col-sm-2 control-label" style="text-align:left;">材料要求</label>
+										<div class="col-sm-8">
+											<input type="text" value="$!{workMaterial.materialRequred}" name="materialRequred" id="materialRequred" class="form-control" />
+										</div>
+									</div>
+									<input type="hidden" value="$!{guideId}" name="guideId" id="guideId" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="$!{basePath}/plug-in-ui/js/Validform_v5.3.2.js"></script> 
+<script type="text/javascript" src="$!{basePath}/plug-in-ui/js/forminit.p3.js"></script> 
