@@ -13,6 +13,7 @@ INSERT  INTO
       ,address    
       ,usertype
       ,openid
+      ,xcxid
       ) 
 values
       (
@@ -28,4 +29,5 @@ values
       ,:workUser.address  
       ,:workUser.usertype
       ,:workUser.openid
+      ,:workUser.xcxId
       )

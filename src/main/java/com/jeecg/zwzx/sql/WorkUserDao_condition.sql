@@ -46,6 +46,10 @@
 		    /* 地址 */
 			and wu.openid = :workUser.openid
 		</#if>
+		<#if ( workUser.xcxId )?? && workUser.xcxId ?length gt 0>
+		    /* 地址 */
+			and wu.xcxid = :workUser.xcxId
+		</#if>
 		<#if ( workUser.parent )?? && workUser.parent ?length gt 0>
 		    /* 地址 */
 			and wu.parent = :workUser.parent

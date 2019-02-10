@@ -33,6 +33,9 @@ SET
 	   <#if workUser.openid ?exists>
 		   openid = :workUser.openid,
 		</#if>
+	   <#if workUser.xcxId ?exists>
+		   xcxid = :workUser.xcxId,
+		</#if>
 	   <#if workUser.parent ?exists>
 		   parent = :workUser.parent,
 		</#if>

@@ -16,6 +16,7 @@ public class WorkUserEntity implements Serializable{
 	private String usertype;
 	private String openid;
 	private String parent;
+	private String xcxId;
 		public String getId() {	    return this.id;	}	public void setId(String id) {	    this.id=id;	}	public String getPhone() {	    return this.phone;	}	public void setPhone(String phone) {	    this.phone=phone;	}	public String getUsername() {	    return this.username;	}	public void setUsername(String username) {	    this.username=username;	}	public String getPassword() {	    return this.password;	}	public void setPassword(String password) {	    this.password=password;	}	public Integer getStatus() {	    return this.status;	}	public void setStatus(Integer status) {	    this.status=status;	}	public String getUserkey() {	    return this.userkey;	}	public void setUserkey(String userkey) {	    this.userkey=userkey;	}	public String getIdcard() {	    return this.idcard;	}	public void setIdcard(String idcard) {	    this.idcard=idcard;	}	public String getRealname() {	    return this.realname;	}	public void setRealname(String realname) {	    this.realname=realname;	}	public Integer getSex() {	    return this.sex;	}	public void setSex(Integer sex) {	    this.sex=sex;	}	public String getAddress() {	    return this.address;	}	public void setAddress(String address) {	    this.address=address;	}
 	public String getUsertype() {
 		return usertype;
@@ -34,6 +35,12 @@ public class WorkUserEntity implements Serializable{
 	}
 	public void setParent(String parent) {
 		this.parent = parent;
+	}
+	public String getXcxId() {
+		return xcxId;
+	}
+	public void setXcxId(String xcxId) {
+		this.xcxId = xcxId;
 	}
 }
 
